@@ -17,7 +17,7 @@ if (packageName === undefined) {
 function exec(command, extraEnv) {
     return execSync(command, {
         stdio: 'inherit',
-        env: Object.assign({}, process.env, extraEnv),
+        env: { ...process.env, ...extraEnv},
     })
 }
 
